@@ -64,6 +64,7 @@ class SeleniumMiddleware:
             capabilities = driver_options.to_capabilities()
             self.driver = webdriver.Remote(command_executor=command_executor,
                                            desired_capabilities=capabilities)
+        self.driver.set_script_timeout(999999999999)
 
     @classmethod
     def from_crawler(cls, crawler):
